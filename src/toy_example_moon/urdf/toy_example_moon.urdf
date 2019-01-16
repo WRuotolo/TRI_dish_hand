@@ -1,0 +1,319 @@
+<robot
+  name="toy_example_moon">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="9.1897E-18 0.005 1.4068E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.04704" />
+      <inertia
+        ixx="1E-05"
+        ixy="1E-08"
+        ixz="1E-08"
+        iyy="1E-05"
+        iyz="1E-08"
+        izz="1E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="slider_r">
+    <inertial>
+      <origin
+        xyz="6.2549E-18 0 0.0014105"
+        rpy="0 0 0" />
+      <mass
+        value="0.0071412" />
+      <inertia
+        ixx="1E-06"
+        ixy="0"
+        ixz="0"
+        iyy="1E-06"
+        iyz="0"
+        izz="1E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/slider_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/slider_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prismatic_r"
+    type="prismatic">
+    <origin
+      xyz="0.0485 0 0.015"
+      rpy="3.1416 -6.123E-17 -1.5708" />
+    <parent
+      link="base" />
+    <child
+      link="slider_r" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.039"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0.2" />
+    <safety_controller
+      soft_upper="0"
+      soft_lower="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="finger_r">
+    <inertial>
+      <origin
+        xyz="4.7806E-18 0.00019138 -0.0003046"
+        rpy="0 0 0" />
+      <mass
+        value="0.021819" />
+      <inertia
+        ixx="5E-06"
+        ixy="0"
+        ixz="0"
+        iyy="5E-06"
+        iyz="0"
+        izz="5E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/finger_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/finger_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="revolute_r"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.041"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="slider_r" />
+    <child
+      link="finger_r" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0.7"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0.1"
+      friction="0" />
+    <safety_controller
+      soft_upper="0"
+      soft_lower="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="slider_l">
+    <inertial>
+      <origin
+        xyz="1.1051E-17 0 0.0014105"
+        rpy="0 0 0" />
+      <mass
+        value="0.0071412" />
+      <inertia
+        ixx="1E-06"
+        ixy="0"
+        ixz="0"
+        iyy="1E-06"
+        iyz="0"
+        izz="1E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/slider_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/slider_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prismatic_l"
+    type="prismatic">
+    <origin
+      xyz="-0.0485 0 0.015"
+      rpy="3.1416 6.123E-17 1.5708" />
+    <parent
+      link="base" />
+    <child
+      link="slider_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.039"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0.2" />
+    <safety_controller
+      soft_upper="0"
+      soft_lower="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="finger_l">
+    <inertial>
+      <origin
+        xyz="-6.8704E-18 0.00019138 -0.034305"
+        rpy="0 0 0" />
+      <mass
+        value="0.021819" />
+      <inertia
+        ixx="5E-06"
+        ixy="0"
+        ixz="0"
+        iyy="5E-06"
+        iyz="0"
+        izz="5E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/finger_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toy_example_moon/meshes/finger_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="revolute_l"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.007"
+      rpy="0 0 3.1416" />
+    <parent
+      link="slider_l" />
+    <child
+      link="finger_l" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0.7"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0.1"
+      friction="0" />
+    <safety_controller
+      soft_upper="0"
+      soft_lower="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+</robot>

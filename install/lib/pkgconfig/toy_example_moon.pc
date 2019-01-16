@@ -1,0 +1,8 @@
+prefix=/home/bdml/catkin_ws/install
+
+Name: toy_example_moon
+Description: Description of toy_example_moon
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/bdml/catkin_ws/install/lib 
+Requires: 

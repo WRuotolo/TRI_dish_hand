@@ -1,0 +1,1 @@
+controller_joint_names: ['prismatic_r', 'revolute_r', 'prismatic_l', 'revolute_l', ]

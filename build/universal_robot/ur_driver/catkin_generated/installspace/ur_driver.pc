@@ -1,0 +1,8 @@
+prefix=/home/wruotolo/catkin_ws/install
+
+Name: ur_driver
+Description: Description of ur_driver
+Version: 1.1.9
+Cflags: -I/home/wruotolo/catkin_ws/install/include
+Libs: -L/home/wruotolo/catkin_ws/install/lib -lroboticArm -lURcontrolV2
+Requires: dynamic_reconfigure message_runtime

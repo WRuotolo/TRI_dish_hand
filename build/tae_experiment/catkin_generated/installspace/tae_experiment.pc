@@ -1,0 +1,8 @@
+prefix=/home/wruotolo/catkin_ws/install
+
+Name: tae_experiment
+Description: Description of tae_experiment
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/wruotolo/catkin_ws/install/lib -lur_driver
+Requires: ur_driver
