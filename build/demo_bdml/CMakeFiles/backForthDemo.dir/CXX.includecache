@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/wruotolo/catkin_ws/devel/include/robotiq_2f_gripper_control/Robotiq2FGripper_robot_output.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/wruotolo/catkin_ws/devel/include/ur_msgs/FollowCartesianTrajectoryAction.h
 string
 -
@@ -224,6 +240,8 @@ std_msgs/String.h
 tf/transform_listener.h
 -
 geometry_msgs/Vector3.h
+-
+robotiq_2f_gripper_control/Robotiq2FGripper_robot_output.h
 -
 ur_msgs/FollowCartesianTrajectoryAction.h
 -

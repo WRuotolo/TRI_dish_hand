@@ -19,7 +19,7 @@
 #include <tf/transform_listener.h>
 #include <geometry_msgs/Vector3.h>
 
-//#include <robotiq_c_model_control/CModel_robot_input.h>
+#include <robotiq_2f_gripper_control/Robotiq2FGripper_robot_output.h>
 //#include <robotiq_c_model_control/CModel_robot_output.h>
 
 #include <ur_msgs/FollowCartesianTrajectoryAction.h>
@@ -31,8 +31,8 @@ using namespace std;
 using namespace boost::posix_time;
 
 // Gripper publisher:
-//ros::Publisher gripper_publisher;
-//robotiq_c_model_control::CModel_robot_output gripper_command;
+ros::Publisher gripper_publisher;
+robotiq_2f_gripper_control::Robotiq2FGripper_robot_output gripper_command;
 
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
 {
